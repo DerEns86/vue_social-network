@@ -31,5 +31,7 @@ export const usePostsStore = defineStore('posts', () => {
     }
   }
 
-  return { posts, fetchPosts, likePost, unlikePost }
+  const likedPosts = computed(() => posts.value.filter((post) => post.isLiked))
+
+  return { posts, fetchPosts, likePost, unlikePost, likedPosts }
 })
