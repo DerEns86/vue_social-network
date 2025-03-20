@@ -16,7 +16,8 @@ console.log(liked.value, count.value)
 
 const onHandleLike = async (postId: string) => {
   if (liked.value) {
-    count.value--
+    if (count.value > 0) count.value--
+
     postsStore.unlikePost(postId)
   } else {
     count.value++

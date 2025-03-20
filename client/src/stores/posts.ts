@@ -12,9 +12,6 @@ export const usePostsStore = defineStore('posts', () => {
   }
 
   function likePost(postId: string) {
-    console.log('likePost', postId)
-
-    // debugger
     const post = posts.value.find((post) => post.id === postId)
     if (post) {
       post.isLiked = true
@@ -23,12 +20,14 @@ export const usePostsStore = defineStore('posts', () => {
   }
 
   function unlikePost(postId: string) {
-    console.log('unlikePost', postId)
-
     const post = posts.value.find((post) => post.id === postId)
     if (post) {
       post.isLiked = false
-      post.likeCount--
+      if (post.likeCount > 0) {
+        post.likeCount--
+      } else {
+        post.likeCount = 0
+      }
     }
   }
 
