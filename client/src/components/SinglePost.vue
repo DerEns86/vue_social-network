@@ -1,23 +1,51 @@
 <script setup>
 import LikeButton from '@/components/LikeButton.vue'
+import { useUserStore } from '@/stores/user'
+import { ref, defineProps, onMounted } from 'vue'
 
-import { defineProps } from 'vue'
+const userStore = useUserStore()
+
 const props = defineProps(['post'])
+
+const username = ref('')
+const userJoinedAt = ref('')
+
+async function fetchUserName(userId) {
+  const user = await userStore.fetchUserById(userId)
+  username.value = user.username
+}
+
+async function fetchUserJoinedAt(userId) {
+  const user = await userStore.fetchUserById(userId)
+  userJoinedAt.value = new Date(user.joinedAt).toLocaleDateString('de-DE')
+}
+
+function getpastTime(date) {
+  const today = new Date()
+  const postDate = new Date(date)
+  const diffTime = Math.abs(today - postDate)
+  const diffhours = Math.ceil(diffTime / (1000 * 60 * 60))
+  return diffhours
+}
+
+onMounted(() => {
+  fetchUserName(props.post.userId)
+  fetchUserJoinedAt(props.post.userId)
+})
 </script>
 
 <template>
-  <section>
-    <!-- component -->
-    <!-- post card -->
-    <div class="flex bg-white shadow-lg rounded-lg mx-4 md:mx-auto my-56 max-w-md md:max-w-2xl">
-      <!--horizantil margin is just for display-->
-      <div class="flex items-start px-4 py-6">
-        <div class="">
+  <article class="my-4">
+    <div class="flex bg-white shadow-lg rounded-lg mx-4 md:mx-auto max-w-md md:max-w-2xl">
+      <div class="flex items-start px-4 py-6 w-full">
+        <div class="w-full">
           <div class="flex items-center justify-between">
-            <h2 class="text-lg font-semibold text-gray-900 -mt-1">Brad Adams</h2>
-            <small class="text-sm text-gray-700">22h ago</small>
+            <h2 class="text-lg font-semibold text-gray-900 -mt-1">
+              {{ username }}
+            </h2>
+            <small class="text-sm text-gray-700">{{ getpastTime(post.createdAt) }}h ago</small>
           </div>
-          <p class="text-gray-700">Joined 12 SEP 2012.</p>
+          <p class="text-gray-700">Joined {{ userJoinedAt }}</p>
           <p class="mt-3 text-gray-700 text-sm">
             {{ post.post }}
           </p>
@@ -27,7 +55,7 @@ const props = defineProps(['post'])
         </div>
       </div>
     </div>
-  </section>
+  </article>
 </template>
 
 <style scoped></style>

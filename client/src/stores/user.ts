@@ -10,5 +10,10 @@ export const useUserStore = defineStore('user', () => {
     currentUser.value = await response.json()
   }
 
-  return { currentUser, fetchCurrentUser }
+  async function fetchUserById(id: string) {
+    const response = await fetch(`${BASE_URL}users/${id}`)
+    return await response.json()
+  }
+
+  return { currentUser, fetchCurrentUser, fetchUserById }
 })
