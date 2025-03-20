@@ -4,10 +4,6 @@ import SinglePost from '@/components/SinglePost.vue'
 import { usePostsStore } from '@/stores/posts'
 
 const postsStore = usePostsStore()
-
-onMounted(async () => {
-  await postsStore.fetchPosts()
-})
 </script>
 
 <template>

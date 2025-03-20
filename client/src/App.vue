@@ -2,12 +2,18 @@
 import { RouterLink, RouterView } from 'vue-router'
 import { ref, onMounted } from 'vue'
 import { useUserStore } from './stores/user'
+import { usePostsStore } from './stores/posts'
 import MainNavigation from '@/components/MainNavigation.vue'
 
 const userStore = useUserStore()
+const postsStore = usePostsStore()
 
 onMounted(async () => {
   await userStore.fetchCurrentUser()
+})
+
+onMounted(async () => {
+  await postsStore.fetchPosts()
 })
 </script>
 
@@ -20,7 +26,7 @@ onMounted(async () => {
     </div>
   </header>
   <div>
-    <p>Hello, {{ userStore.currentUser.username }}</p>
+    <p>Hello, {{ userStore.currentUser?.username }}</p>
   </div>
   <section>
     <RouterView />
