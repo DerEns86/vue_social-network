@@ -1,5 +1,9 @@
-<script setup></script>
+<script setup>
+import SinglePost from '@/components/SinglePost.vue'
+</script>
 
-<template></template>
+<template>
+  <SinglePost />
+</template>
 
 <style scoped></style>
