@@ -1,5 +1,8 @@
 <script setup>
 import LikeButton from '@/components/LikeButton.vue'
+
+import { defineProps } from 'vue'
+const props = defineProps(['post'])
 </script>
 
 <template>
@@ -16,10 +19,10 @@ import LikeButton from '@/components/LikeButton.vue'
           </div>
           <p class="text-gray-700">Joined 12 SEP 2012.</p>
           <p class="mt-3 text-gray-700 text-sm">
-            Lorem ipsum, dolor sit amet conse. Saepe optio minus rem dolor sit amet!
+            {{ post.post }}
           </p>
           <div class="mt-4 flex items-center">
-            <LikeButton />
+            <LikeButton :post="post" />
           </div>
         </div>
       </div>
