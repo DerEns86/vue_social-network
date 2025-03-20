@@ -16,6 +16,10 @@
     {
       "id": "4c12f8c8-3af3-4c63-85ae-8c7b3cbb4f67",
       "username": "janedoe"
+    },
+    {
+      "id": "g7g8h5a3-r5b9-0w3a-6a5e-9h7e6e7g3c5t",
+      "username": "codingpro"
     }
   ],
 
@@ -50,7 +54,7 @@
     },
     {
       "id": "e7b4c2d3-1a5e-9f3c-8d7e-4b2f7c1d6e8b",
-      "userId": "2eab04f4-5e6f-43b4-9b8d-cfb437ae57b5",
+      "userId": "g7g8h5a3-r5b9-0w3a-6a5e-9h7e6e7g3c5t",
       "post": "Ich liebe die Reaktivität von Vue – endlich kein unnötiges DOM-Handling mehr. 😎",
       "isLiked": false,
       "likeCount": 6
