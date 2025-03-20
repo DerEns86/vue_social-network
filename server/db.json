@@ -1,0 +1,59 @@
+{
+  "me": {
+    "id": "g7g8h5a3-r5b9-0w3a-6a5e-9h7e6e7g3c5t",
+    "username": "codingpro"
+  },
+
+  "users": [
+    {
+      "id": "e8b9c7a1-9d6c-4d2a-a7c3-fb59a3ec67df",
+      "username": "maxmustermann"
+    },
+    {
+      "id": "2eab04f4-5e6f-43b4-9b8d-cfb437ae57b5",
+      "username": "juliaschmidt"
+    },
+    {
+      "id": "4c12f8c8-3af3-4c63-85ae-8c7b3cbb4f67",
+      "username": "janedoe"
+    }
+  ],
+
+  "posts": [
+    {
+      "id": "d9f8e7a3-1c2b-4a5e-8b7d-6e7b4c2d3f89",
+      "userId": "e8b9c7a1-9d6c-4d2a-a7c3-fb59a3ec67df",
+      "post": "Vue.js hat mein komplettes Frontend-Game verändert. ❤️",
+      "isLiked": true,
+      "likeCount": 1
+    },
+    {
+      "id": "c1a4e7f2-8d7e-4b2a-9f3c-5d2b7e6a8f3c",
+      "userId": "2eab04f4-5e6f-43b4-9b8d-cfb437ae57b5",
+      "post": "State-Management mit Pinia ist so viel einfacher als Redux. 🙌",
+      "isLiked": false,
+      "likeCount": 0
+    },
+    {
+      "id": "f2b7d3c1-4a5e-8d7e-9f3c-6e7b4c2d1a3f",
+      "userId": "4c12f8c8-3af3-4c63-85ae-8c7b3cbb4f67",
+      "post": "Gerade meinen ersten Vue-Router geschrieben – fühlt sich gut an. 🚀",
+      "isLiked": true,
+      "likeCount": 50
+    },
+    {
+      "id": "b4c2d1a3-f2b7-9f3c-4a5e-8d7e6e7b3c1d",
+      "userId": "e8b9c7a1-9d6c-4d2a-a7c3-fb59a3ec67df",
+      "post": "Wer von euch hat schon mal eine große Vue-App gebaut? Tipps sind willkommen!",
+      "isLiked": false,
+      "likeCount": 10
+    },
+    {
+      "id": "e7b4c2d3-1a5e-9f3c-8d7e-4b2f7c1d6e8b",
+      "userId": "2eab04f4-5e6f-43b4-9b8d-cfb437ae57b5",
+      "post": "Ich liebe die Reaktivität von Vue – endlich kein unnötiges DOM-Handling mehr. 😎",
+      "isLiked": false,
+      "likeCount": 6
+    }
+  ]
+}
